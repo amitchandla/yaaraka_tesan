@@ -1,0 +1,123 @@
+/* ============================================================
+   GOLDEN PIZZA CAFE — ADMIN PANEL STYLES
+   ============================================================ */
+
+.admin-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+.admin-sidebar {
+  background: var(--bg-alt);
+  border-right: 1px solid var(--line);
+  padding: 22px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.admin-sidebar .brand { margin-bottom: 26px; padding: 0 8px; }
+.admin-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: var(--cream-dim);
+  margin-bottom: 4px;
+}
+.admin-nav a:hover { background: var(--surface); }
+.admin-nav a.active { background: var(--maroon); color: var(--cream); }
+.admin-nav .grp {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 16px 12px 6px;
+}
+
+.admin-main { padding: 26px 30px 60px; }
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.admin-topbar h1 { font-size: 24px; }
+
+.admin-tabs {
+  display: none;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.stat-card .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-transform: uppercase; }
+.stat-card .val { font-family: var(--font-display); font-size: 28px; color: var(--gold); margin-top: 6px; }
+
+.admin-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+  display: none;
+}
+.admin-panel.active { display: block; }
+.admin-panel h2 { font-size: 17px; text-transform: none; margin-bottom: 18px; }
+
+.admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.admin-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+.thumb-upload {
+  border: 1.5px dashed var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  cursor: pointer;
+  background: var(--surface-2);
+}
+.thumb-upload:hover { border-color: var(--gold); color: var(--gold); }
+
+.status-select { display: inline-block; width: auto; padding: 6px 10px; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .admin-sidebar { display: none; }
+  .admin-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .admin-tabs button {
+    flex: none;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--cream-dim);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  .admin-tabs button.active { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+  .admin-grid-2, .admin-grid-3 { grid-template-columns: 1fr; }
+  .admin-main { padding: 18px 16px 60px; }
+}
