@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6f2338"/>
+      <stop offset="100%" stop-color="#17100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#a01e2b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a01e2b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dumpling" cx="40%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#fdf3df"/>
+      <stop offset="100%" stop-color="#e6cfa0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg)"/>
+  <rect width="600" height="450" fill="url(#glow)"/>
+  <ellipse cx="300" cy="330" rx="175" ry="26" fill="#3a2a1a"/>
+  <ellipse cx="300" cy="322" rx="175" ry="20" fill="#4a3521"/>
+  <g>
+    <ellipse cx="220" cy="270" rx="58" ry="48" fill="url(#dumpling)"/>
+    <path d="M 220 222 Q 200 230 205 248 M 220 222 Q 220 235 220 250 M 220 222 Q 240 230 235 248" stroke="#c9a366" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="220" cy="222" r="6" fill="#e6cfa0" stroke="#c9a366" stroke-width="2"/>
+  </g>
+  <g>
+    <ellipse cx="340" cy="255" rx="65" ry="54" fill="url(#dumpling)"/>
+    <path d="M 340 200 Q 316 210 322 232 M 340 200 Q 340 216 340 234 M 340 200 Q 364 210 358 232" stroke="#c9a366" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <circle cx="340" cy="200" r="7" fill="#e6cfa0" stroke="#c9a366" stroke-width="2"/>
+  </g>
+  <g>
+    <ellipse cx="290" cy="310" rx="52" ry="42" fill="url(#dumpling)"/>
+    <path d="M 290 268 Q 272 276 276 292 M 290 268 Q 290 280 290 294 M 290 268 Q 308 276 304 292" stroke="#c9a366" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="290" cy="268" r="5.5" fill="#e6cfa0" stroke="#c9a366" stroke-width="2"/>
+  </g>
+  <circle cx="440" cy="330" r="34" fill="#8c1c2b"/>
+  <circle cx="440" cy="330" r="34" fill="none" stroke="#c9502f" stroke-width="3"/>
+  <path d="M 425 322 q 15 -10 30 0" stroke="#e8a33d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g stroke="#fdf8f0" stroke-width="4" stroke-linecap="round" opacity="0.6">
+    <path d="M 210 150 q -8 -22 4 -38"/>
+    <path d="M 330 130 q -8 -22 4 -38"/>
+  </g>
+</svg>

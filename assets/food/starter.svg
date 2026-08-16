@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7d2a1c"/>
+      <stop offset="100%" stop-color="#17100e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#e8a33d" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#e8a33d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="conef" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2c26b"/>
+      <stop offset="100%" stop-color="#c9502f"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#bg)"/>
+  <rect width="600" height="450" fill="url(#glow)"/>
+  <ellipse cx="300" cy="368" rx="130" ry="15" fill="#000" opacity="0.28"/>
+  <path d="M 210 220 L 390 220 L 320 355 Q 300 372 280 355 Z" fill="url(#conef)"/>
+  <path d="M 210 220 L 390 220 L 320 355 Q 300 372 280 355 Z" fill="none" stroke="#8c5a1e" stroke-width="4"/>
+  <g fill="#f6d878" stroke="#c68f3f" stroke-width="2">
+    <rect x="235" y="150" width="16" height="95" rx="6" transform="rotate(-8 243 197)"/>
+    <rect x="265" y="135" width="16" height="105" rx="6" transform="rotate(-3 273 187)"/>
+    <rect x="295" y="128" width="16" height="112" rx="6"/>
+    <rect x="325" y="135" width="16" height="105" rx="6" transform="rotate(3 333 187)"/>
+    <rect x="352" y="150" width="16" height="95" rx="6" transform="rotate(8 360 197)"/>
+  </g>
+  <g stroke="#fdf8f0" stroke-width="4" stroke-linecap="round" opacity="0.5">
+    <path d="M 260 110 q -6 -20 4 -34"/>
+    <path d="M 340 110 q -6 -20 4 -34"/>
+  </g>
+</svg>
