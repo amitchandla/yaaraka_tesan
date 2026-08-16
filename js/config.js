@@ -12,8 +12,8 @@
    ============================================================ */
 
 const CONFIG = {
-  SUPABASE_URL: "YOUR_SUPABASE_PROJECT_URL", // e.g. https://xxxxxxxx.supabase.co
-  SUPABASE_ANON_KEY: "YOUR_SUPABASE_ANON_PUBLIC_KEY",
+  SUPABASE_URL: "https://cehuemgzltccxyvummym.supabase.co", // e.g. https://xxxxxxxx.supabase.co
+  SUPABASE_ANON_KEY: "sb_publishable_cFXv94EqBTjY6WlsZNlVng_YEBDG2cZ",
 
   RESTAURANT: {
     name: "Golden Pizza Cafe",
