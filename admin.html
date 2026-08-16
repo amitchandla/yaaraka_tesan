@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel — Golden Pizza Cafe</title>
+<link rel="icon" href="assets/logo/golden-pizza-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <a href="index.html" class="brand">
+      <img src="assets/logo/golden-pizza-logo.png" alt="Golden Pizza Cafe logo" style="width:38px;height:38px;">
+      <span class="brand-name" style="font-size:14px;">Golden Pizza<span>Admin Panel</span></span>
+    </a>
+    <nav class="admin-nav">
+      <div class="grp">Overview</div>
+      <a href="#" data-target="dashboard" class="active">📊 Dashboard</a>
+      <a href="#" data-target="orders">🧾 Orders</a>
+      <div class="grp">Catalog</div>
+      <a href="#" data-target="products">🍕 Products</a>
+      <a href="#" data-target="categories">🏷️ Categories</a>
+      <a href="#" data-target="offers">🎁 Offers</a>
+      <div class="grp">Media</div>
+      <a href="#" data-target="logo">🖼️ Logo</a>
+      <a href="#" data-target="menugraphics">📋 Menu Graphics</a>
+      <a href="#" data-target="gallery">📷 Gallery</a>
+      <div class="grp">People</div>
+      <a href="#" data-target="customers">👤 Customers</a>
+      <div class="grp">Configuration</div>
+      <a href="#" data-target="settings">⚙️ Delivery &amp; Restaurant</a>
+    </nav>
+    <a href="index.html" class="btn btn-outline btn-sm btn-block" style="margin-top:20px;">← Back to Site</a>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-tabs">
+      <button data-target="dashboard" class="active">Dashboard</button>
+      <button data-target="orders">Orders</button>
+      <button data-target="products">Products</button>
+      <button data-target="categories">Categories</button>
+      <button data-target="offers">Offers</button>
+      <button data-target="logo">Logo</button>
+      <button data-target="menugraphics">Menu Graphics</button>
+      <button data-target="gallery">Gallery</button>
+      <button data-target="customers">Customers</button>
+      <button data-target="settings">Settings</button>
+    </div>
+
+    <div class="admin-topbar">
+      <h1>Admin Panel</h1>
+      <div style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);">Signed in as Nissu (Owner)</div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="admin-panel active" data-panel="dashboard">
+      <h2>At A Glance</h2>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="lbl">Total Orders</div><div class="val" data-stat-orders>0</div></div>
+        <div class="stat-card"><div class="lbl">Total Revenue</div><div class="val" data-stat-revenue>₹0</div></div>
+        <div class="stat-card"><div class="lbl">Menu Items</div><div class="val">64</div></div>
+        <div class="stat-card"><div class="lbl">Free Delivery Radius</div><div class="val">5 KM</div></div>
+      </div>
+      <p style="color:var(--text-muted);font-size:13.5px;">This dashboard reads live from Supabase once connected (see <code>js/config.js</code>). Until then it runs against demo data stored in this browser so every screen here is fully clickable.</p>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="admin-panel" data-panel="orders">
+      <h2>All Orders</h2>
+      <div style="overflow-x:auto;">
+        <table class="admin-table" style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="text-align:left;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;">
+              <th style="padding:8px;">Order ID</th><th style="padding:8px;">Customer</th><th style="padding:8px;">Items</th><th style="padding:8px;">Total</th><th style="padding:8px;">Payment</th><th style="padding:8px;">Status</th><th style="padding:8px;">Update Status</th>
+            </tr>
+          </thead>
+          <tbody data-admin-order-rows></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="admin-panel" data-panel="products">
+      <h2 data-product-form-title>Add Menu Item</h2>
+      <form data-product-form>
+        <input type="hidden" name="id">
+        <div class="admin-grid-2">
+          <div class="form-row">
+            <label>Product Name</label>
+            <input type="text" name="name" required placeholder="e.g. Cheese Margherita">
+          </div>
+          <div class="form-row">
+            <label>Category</label>
+            <select name="category" required>
+              <option value="pizza">Pizza</option>
+              <option value="burger">Burger</option>
+              <option value="sandwich">Sandwich</option>
+              <option value="momos">Momos</option>
+              <option value="pasta">Pasta</option>
+              <option value="noodles">Noodles</option>
+              <option value="maggie">Maggie</option>
+              <option value="starter">Starter</option>
+              <option value="shake">Shake</option>
+              <option value="coffee">Coffee</option>
+              <option value="beverages">Mocktail / Mojito</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Description</label>
+          <textarea name="description" placeholder="Short description shown on the product card"></textarea>
+        </div>
+
+        <div class="form-row" data-regular-field>
+          <label>Regular Price (₹)</label>
+          <input type="number" name="regularPrice" min="0" placeholder="e.g. 99">
+        </div>
+        <div class="admin-grid-3" data-size-fields style="display:none;margin-bottom:16px;">
+          <div class="form-row" style="margin-bottom:0;">
+            <label>Small Price (₹)</label>
+            <input type="number" name="smallPrice" min="0">
+          </div>
+          <div class="form-row" style="margin-bottom:0;">
+            <label>Medium Price (₹)</label>
+            <input type="number" name="mediumPrice" min="0">
+          </div>
+          <div class="form-row" style="margin-bottom:0;">
+            <label>Large Price (₹)</label>
+            <input type="number" name="largePrice" min="0">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Product Image</label>
+          <input type="file" name="imageFile" accept="image/*">
+        </div>
+
+        <div class="admin-grid-3" style="align-items:center;margin-bottom:20px;">
+          <label style="display:flex;gap:8px;align-items:center;font-size:13.5px;"><input type="checkbox" name="veg" checked style="width:auto;"> Veg</label>
+          <label style="display:flex;gap:8px;align-items:center;font-size:13.5px;"><input type="checkbox" name="available" checked style="width:auto;"> Available</label>
+          <label style="display:flex;gap:8px;align-items:center;font-size:13.5px;"><input type="checkbox" name="featured" style="width:auto;"> Featured</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Menu Item</button>
+      </form>
+
+      <hr class="ticket-divider" style="margin:28px 0;">
+
+      <h2>All Menu Items</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="text-align:left;color:var(--text-muted);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;">
+              <th style="padding:8px;">Image</th><th style="padding:8px;">Name</th><th style="padding:8px;">Category</th><th style="padding:8px;">Price</th><th style="padding:8px;">Veg</th><th style="padding:8px;">Status</th><th style="padding:8px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody data-admin-product-rows></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="admin-panel" data-panel="categories">
+      <h2>Menu Categories</h2>
+      <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:16px;">These are the fixed categories used across search and filtering. Assign products to one of these from the Products tab.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;" id="admin-category-chips"></div>
+    </div>
+
+    <!-- OFFERS -->
+    <div class="admin-panel" data-panel="offers">
+      <h2>Special Offers</h2>
+      <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:16px;">Offer cards shown on the Home page and Menu → Offers tab. Connect Supabase and wire this form to an <code>offers</code> table to make these fully editable.</p>
+      <div id="admin-offers-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="admin-panel" data-panel="logo">
+      <h2>Logo Management</h2>
+      <div class="admin-grid-2">
+        <div>
+          <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:10px;">Current logo</p>
+          <img src="assets/logo/golden-pizza-logo.png" style="width:140px;height:140px;border-radius:16px;object-fit:cover;border:1px solid var(--line);">
+        </div>
+        <div>
+          <label class="thumb-upload" style="display:block;">
+            Click to upload a new logo (PNG, transparent background recommended)
+            <input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'logos','Logo')">
+          </label>
+          <button class="btn btn-dark btn-sm" style="margin-top:12px;" onclick="showToast('Logo removed (demo mode)')">Delete Logo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU GRAPHICS -->
+    <div class="admin-panel" data-panel="menugraphics">
+      <h2>Menu Graphics (A / B / C)</h2>
+      <div class="admin-grid-3">
+        <div>
+          <img src="assets/menu/menu-a.png" style="border-radius:12px;border:1px solid var(--line);margin-bottom:10px;">
+          <label class="thumb-upload" style="display:block;">Replace Menu A<input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'menu-graphics','Menu A')"></label>
+        </div>
+        <div>
+          <img src="assets/menu/menu-b.png" style="border-radius:12px;border:1px solid var(--line);margin-bottom:10px;">
+          <label class="thumb-upload" style="display:block;">Replace Menu B<input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'menu-graphics','Menu B')"></label>
+        </div>
+        <div>
+          <img src="assets/menu/menu-c.png" style="border-radius:12px;border:1px solid var(--line);margin-bottom:10px;">
+          <label class="thumb-upload" style="display:block;">Replace Menu C<input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'menu-graphics','Menu C')"></label>
+        </div>
+      </div>
+      <label class="thumb-upload" style="display:block;margin-top:18px;">
+        + Upload a new / future menu page
+        <input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'menu-graphics','New menu page')">
+      </label>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="admin-panel" data-panel="gallery">
+      <h2>Gallery Management</h2>
+      <div class="admin-grid-3" id="admin-gallery-grid" style="margin-bottom:18px;"></div>
+      <label class="thumb-upload" style="display:block;">
+        + Upload a new gallery photo
+        <input type="file" accept="image/*" style="display:none;" onchange="handleAssetUpload(this,'gallery','Gallery photo')">
+      </label>
+    </div>
+
+    <!-- CUSTOMERS -->
+    <div class="admin-panel" data-panel="customers">
+      <h2>Customers</h2>
+      <p style="color:var(--text-muted);font-size:13.5px;">Customer accounts are managed by Supabase Authentication. Once connected, this panel lists everyone in the <code>profiles</code> table (name, phone, email, signup date) pulled with an admin-only RLS policy.</p>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="admin-panel" data-panel="settings">
+      <h2>Delivery Settings</h2>
+      <form data-settings-form>
+        <div class="admin-grid-2">
+          <div class="form-row">
+            <label>Free Delivery Radius (KM)</label>
+            <input type="number" name="freeKm" min="0" step="0.1" required>
+          </div>
+          <div class="form-row">
+            <label>Extra Charge Per KM Beyond Radius (₹)</label>
+            <input type="number" name="perKm" min="0" required>
+          </div>
+        </div>
+
+        <h2 style="margin-top:26px;">Restaurant Location</h2>
+        <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:12px;">Stand at Golden Pizza Cafe and tap "Use My Location" to set the exact delivery starting point.</p>
+        <button type="button" data-admin-use-location class="btn btn-dark btn-sm" style="margin-bottom:14px;">📍 Use My Location</button>
+        <div class="admin-grid-2">
+          <div class="form-row">
+            <label>Restaurant Latitude</label>
+            <input type="number" name="lat" step="0.000001" required>
+          </div>
+          <div class="form-row">
+            <label>Restaurant Longitude</label>
+            <input type="number" name="lng" step="0.000001" required>
+          </div>
+        </div>
+
+        <h2 style="margin-top:26px;">Payment</h2>
+        <div class="form-row">
+          <label>UPI ID</label>
+          <input type="text" name="upi" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Settings</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="js/supabase.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/location.js"></script>
+<script src="js/admin.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const chipWrap = document.getElementById("admin-category-chips");
+    if (chipWrap) {
+      chipWrap.innerHTML = CATEGORIES.filter(c => c.id !== "all").map(c =>
+        `<span class="badge badge-cod">${c.label}</span>`
+      ).join("");
+    }
+    const offersList = document.getElementById("admin-offers-list");
+    if (offersList) {
+      offersList.innerHTML = OFFERS_DATA.map(o => `
+        <div class="stat-card" style="display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="font-family:var(--font-display);text-transform:uppercase;font-size:14px;">${o.title}</div>
+            <div style="color:var(--text-muted);font-size:13px;margin-top:4px;">${o.description}</div>
+          </div>
+          <span class="badge badge-free">${o.tag}</span>
+        </div>
+      `).join("");
+    }
+    const galleryGrid = document.getElementById("admin-gallery-grid");
+    if (galleryGrid) {
+      const imgs = ["assets/gallery/cafe-interior-1.jpg","assets/gallery/cafe-interior-2.jpg","assets/gallery/cafe-interior-3.jpg","assets/gallery/party-poster.png","assets/gallery/offers-poster.png","assets/gallery/promo-poster-1.png"];
+      galleryGrid.innerHTML = imgs.map(src => `<img src="${src}" style="border-radius:10px;aspect-ratio:1;object-fit:cover;border:1px solid var(--line);">`).join("");
+    }
+  });
+</script>
+</body>
+</html>

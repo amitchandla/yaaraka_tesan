@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Pizza Cafe — Hot & Delicious Food in Behal</title>
+<meta name="description" content="Golden Pizza Cafe, Behal — pizza, burgers, sandwiches, momos, pasta, noodles, shakes and more. Order online or on WhatsApp. Open every day, 9 AM – 9 PM.">
+<link rel="icon" href="assets/logo/golden-pizza-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo/golden-pizza-logo.png" alt="Golden Pizza Cafe logo">
+      <span class="brand-name">Golden Pizza Cafe<span>Behal · Bhiwani</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" placeholder="Search food..." onkeydown="if(event.key==='Enter'){location.href='menu.html?search='+encodeURIComponent(this.value)}">
+      </div>
+      <a href="login.html" class="nav-icon-btn" title="Account" data-account-label>Login</a>
+      <button class="nav-icon-btn" data-cart-open title="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+      <a href="https://wa.me/917027218194" data-whatsapp target="_blank" class="nav-icon-btn" title="WhatsApp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.35 4.95L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+      </a>
+    </div>
+    <button class="hamburger" data-hamburger aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="orders.html">My Orders</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Open Every Day · 9:00 AM – 9:00 PM</div>
+      <h1>Golden <em>Pizza</em> Cafe</h1>
+      <div class="sub">Hot &amp; Delicious Food in Behal</div>
+      <p class="desc">Freshly prepared pizza, burgers, sandwiches, momos, pasta, noodles, shakes and more — made fresh to order at our cafe on Pilani Road, Behal.</p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn btn-primary">View Menu</a>
+        <a href="checkout.html" class="btn btn-dark">Order Now</a>
+        <a href="https://wa.me/917027218194" data-whatsapp target="_blank" class="btn btn-whatsapp">WhatsApp Order</a>
+      </div>
+      <div class="hero-hours">
+        <strong>Open Every Day</strong> · 9:00 AM – 9:00 PM &nbsp;|&nbsp; <a data-tel href="tel:7027218194" style="color:var(--gold)">Call 7027218194</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="assets/gallery/promo-poster-1.png" alt="Golden Pizza Cafe — pizza starting from ₹59">
+      </div>
+      <div class="hero-chip">
+        <span class="big">₹59</span>
+        <span class="small">Pizza starts from</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="info-strip-inner">
+    <span>★ Fresh Ingredients Daily</span>
+    <span>★ Free Delivery Within 5 KM</span>
+    <span>★ Birthday &amp; Anniversary Cakes Available</span>
+    <span>★ Party Hall Booking Open</span>
+    <span>★ Order On WhatsApp — 7027218194</span>
+    <span>★ Fresh Ingredients Daily</span>
+    <span>★ Free Delivery Within 5 KM</span>
+    <span>★ Birthday &amp; Anniversary Cakes Available</span>
+    <span>★ Party Hall Booking Open</span>
+    <span>★ Order On WhatsApp — 7027218194</span>
+  </div>
+</div>
+
+<!-- ============ FEATURED CATEGORIES ============ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">What's Cooking</div>
+      <h2>Order From Our Menu</h2>
+      <p>Twelve categories, real prices straight off our in-store menu boards — pick a category to jump straight in.</p>
+    </div>
+    <div class="product-grid" id="home-categories">
+      <a href="menu.html?category=pizza" class="product-card">
+        <div class="product-media"><img src="assets/food/pizza.svg" alt="Pizza"></div>
+        <div class="product-body"><div class="product-name">Pizza</div><p class="product-desc">Single, double-topping &amp; veg mix — starts at ₹59</p></div>
+      </a>
+      <a href="menu.html?category=burger" class="product-card">
+        <div class="product-media"><img src="assets/food/burger.svg" alt="Burger"></div>
+        <div class="product-body"><div class="product-name">Burger</div><p class="product-desc">Veg, tikki, paneer &amp; tandoori — starts at ₹39</p></div>
+      </a>
+      <a href="menu.html?category=sandwich" class="product-card">
+        <div class="product-media"><img src="assets/food/sandwich.svg" alt="Sandwich"></div>
+        <div class="product-body"><div class="product-name">Sandwich</div><p class="product-desc">Grilled &amp; loaded — starts at ₹69</p></div>
+      </a>
+      <a href="menu.html?category=momos" class="product-card">
+        <div class="product-media"><img src="assets/food/momos.svg" alt="Momos"></div>
+        <div class="product-body"><div class="product-name">Momos</div><p class="product-desc">Steamed, fried &amp; gravy — starts at ₹59</p></div>
+      </a>
+      <a href="menu.html?category=pasta" class="product-card">
+        <div class="product-media"><img src="assets/food/pasta.svg" alt="Pasta"></div>
+        <div class="product-body"><div class="product-name">Pasta</div><p class="product-desc">White, red, makhni &amp; tandoori sauce — starts at ₹79</p></div>
+      </a>
+      <a href="menu.html?category=shake" class="product-card">
+        <div class="product-media"><img src="assets/food/shake.svg" alt="Shake"></div>
+        <div class="product-body"><div class="product-name">Shake</div><p class="product-desc">Banana to Oreo — starts at ₹49</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="torn-divider"></div></div>
+
+<!-- ============ OFFERS ============ -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Special Offers</div>
+      <h2>Deals Worth Ordering For</h2>
+    </div>
+    <div class="offer-grid" data-offer-grid></div>
+  </div>
+</section>
+
+<!-- ============ PARTY / CELEBRATION ============ -->
+<section>
+  <div class="container">
+    <div class="party-banner" style="background-image:url('assets/gallery/party-poster.png');background-size:cover;background-position:center;">
+      <div class="eyebrow" style="justify-content:center;">Celebrate With Us</div>
+      <h2 style="margin-top:10px;">Birthday · Anniversary · Party Hall</h2>
+      <div class="party-tags">
+        <span>Birthday Celebration</span>
+        <span>Anniversary Celebration</span>
+        <span>Small Event Sitting Area</span>
+      </div>
+      <a href="https://wa.me/917027218194?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20booking%20a%20party%20at%20Golden%20Pizza%20Cafe." target="_blank" class="btn btn-whatsapp">Enquire on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT PREVIEW ============ -->
+<section class="section-alt">
+  <div class="container two-col">
+    <div>
+      <div class="eyebrow">About Us</div>
+      <h2 style="margin-top:10px;">Golden Pizza Cafe</h2>
+      <p style="color:var(--text-muted);margin-top:14px;">Golden Pizza Cafe is a fast-food cafe in Behal offering pizzas, burgers, sandwiches, momos, pasta, noodles, shakes, beverages and more — made fresh, served fast.</p>
+      <div class="stat-row">
+        <div class="stat"><b>9AM–9PM</b><span>Open Every Day</span></div>
+        <div class="stat"><b>50+</b><span>Menu Items</span></div>
+        <div class="stat"><b>5 KM</b><span>Free Delivery</span></div>
+      </div>
+      <a href="about.html" class="btn btn-outline" style="margin-top:26px;">Read Our Story</a>
+    </div>
+    <div class="frame-img"><img src="assets/gallery/cafe-interior-2.jpg" alt="Golden Pizza Cafe seating area"></div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo/golden-pizza-logo.png" alt="Golden Pizza Cafe logo">
+          <span class="brand-name">Golden Pizza Cafe</span>
+        </div>
+        <p data-rest-address>Behal Pilani Road, Nearby Parshuram Dharmashala, Behal, Bhiwani, Haryana</p>
+        <div class="footer-social">
+          <a href="https://wa.me/917027218194" data-whatsapp target="_blank" class="nav-icon-btn" title="WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.35 4.95L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg></a>
+          <a href="https://www.instagram.com/golden_pizza_bahal/" data-instagram target="_blank" class="nav-icon-btn" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="orders.html">My Orders</a></li>
+          <li><a href="admin.html">Admin Panel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a data-tel href="tel:7027218194">7027218194</a></li>
+          <li><a href="mailto:goldenpizzamgmt@gmail.com">goldenpizzamgmt@gmail.com</a></li>
+          <li><a href="https://maps.app.goo.gl/ERCTTxdRbNbBHWL27" data-maps target="_blank">Get Directions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Golden Pizza Cafe. All rights reserved.</span>
+      <span>Owned by Nissu · Behal, Bhiwani</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" data-overlay></div>
+<aside class="cart-drawer" data-cart-drawer>
+  <div class="cart-head">
+    <strong style="font-family:var(--font-display);text-transform:uppercase;">Your Cart</strong>
+    <button class="nav-icon-btn" data-cart-close aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" data-cart-items></div>
+  <div class="cart-summary">
+    <div class="summary-row"><span>Food Subtotal</span><span data-cart-subtotal>₹0</span></div>
+    <div class="summary-row total"><span>Estimated Total</span><b data-cart-subtotal>₹0</b></div>
+    <a href="checkout.html" class="btn btn-primary btn-block" data-cart-checkout style="margin-top:14px;">Proceed to Checkout</a>
+  </div>
+</aside>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" data-lightbox>
+  <button class="lightbox-close" data-lightbox-close aria-label="Close">✕</button>
+  <img src="" alt="Full view">
+</div>
+
+<!-- ============ FLOATING ACTIONS ============ -->
+<div class="floating-actions">
+  <a href="https://wa.me/917027218194" data-whatsapp target="_blank" class="fab fab-whatsapp" title="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.35 4.95L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg></a>
+  <a data-tel href="tel:7027218194" class="fab fab-call" title="Call Now"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+</div>
+
+<!-- ============ MOBILE TAB BAR ============ -->
+<nav class="mobile-tabbar">
+  <a href="index.html" class="active">🏠<span>Home</span></a>
+  <a href="menu.html">📋<span>Menu</span></a>
+  <a href="#" data-cart-open>🛒<span>Cart</span></a>
+  <a href="orders.html">🧾<span>Orders</span></a>
+  <a href="login.html">👤<span>Account</span></a>
+</nav>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="js/supabase.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

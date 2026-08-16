@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Golden Pizza Cafe</title>
+<link rel="icon" href="assets/logo/golden-pizza-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo/golden-pizza-logo.png" alt="Golden Pizza Cafe logo">
+      <span class="brand-name">Golden Pizza Cafe<span>Behal · Bhiwani</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="nav-icon-btn" title="Account" data-account-label>Login</a>
+      <button class="nav-icon-btn" data-cart-open title="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </div>
+    <button class="hamburger" data-hamburger aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:20px;">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span> Almost There</div>
+    <h1 style="font-size:clamp(30px,4.5vw,48px);">Checkout</h1>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+
+    <div data-checkout-empty class="empty-state" style="display:none;">
+      <div class="ic">🛒</div>
+      <h3 style="color:var(--cream);font-family:var(--font-display);text-transform:uppercase;margin-bottom:8px;">Your cart is empty</h3>
+      <p>Add something delicious from the menu before checking out.</p>
+      <a href="menu.html" class="btn btn-primary" style="margin-top:16px;">Browse Menu</a>
+    </div>
+
+    <div data-checkout-form class="two-col" style="align-items:start;">
+      <div>
+        <!-- Items review -->
+        <div class="step-card">
+          <h3>1 · Review Your Order</h3>
+          <div id="checkout-items-list" style="display:flex;flex-direction:column;gap:12px;"></div>
+        </div>
+
+        <!-- Delivery location -->
+        <div class="step-card">
+          <h3>2 · Delivery Location</h3>
+          <p style="color:var(--text-muted);font-size:13.5px;margin-bottom:14px;">We calculate your delivery charge from your live location. 0–5 KM is free; beyond that it's ₹10 per additional KM.</p>
+          <button type="button" data-use-location class="btn btn-dark btn-block">Use My Current Location</button>
+          <div style="margin-top:12px;" data-location-status></div>
+          <p class="form-note hidden-note" data-manual-note style="display:none;">Location permission wasn't granted — no problem, just fill in your address below and we'll confirm the delivery charge when we call to confirm your order.</p>
+
+          <div class="distance-box" data-distance-box style="display:none;margin-top:16px;">
+            <div>
+              <div class="lbl">Your Distance</div>
+              <div class="val" data-distance-val>—</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="lbl">Delivery Charge</div>
+              <div class="val" data-delivery-val>—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address form -->
+        <div class="step-card">
+          <h3>3 · Delivery Address</h3>
+          <div class="form-row">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your full name">
+            <div class="field-error" data-error="name">Name is required</div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="10-digit mobile number">
+              <div class="field-error" data-error="phone">Phone number is required</div>
+              <div class="field-error" data-error="phone-format">Enter a valid Indian mobile number</div>
+            </div>
+            <div class="form-row">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@example.com">
+              <div class="field-error" data-error="email">Email is required</div>
+              <div class="field-error" data-error="email-format">Enter a valid email address</div>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label>House / Shop Number</label>
+              <input type="text" name="house" placeholder="House / shop no.">
+              <div class="field-error" data-error="house">Required</div>
+            </div>
+            <div class="form-row">
+              <label>Street / Area</label>
+              <input type="text" name="street" placeholder="Street / area">
+              <div class="field-error" data-error="street">Required</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>City</label>
+            <input type="text" name="city" placeholder="City" value="Bhiwani">
+            <div class="field-error" data-error="city">Required</div>
+          </div>
+          <div class="form-row">
+            <label>Landmark (optional)</label>
+            <input type="text" name="landmark" placeholder="Nearby landmark">
+          </div>
+          <div class="form-row">
+            <label>Delivery Instructions (optional)</label>
+            <textarea name="instructions" placeholder="Any instructions for the delivery rider"></textarea>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="step-card">
+          <h3>4 · Payment Method</h3>
+          <div class="payment-opts">
+            <div class="payment-opt" data-payment-opt="upi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <div class="ttl">UPI Payment</div>
+            </div>
+            <div class="payment-opt" data-payment-opt="cod">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div class="ttl">Cash On Delivery</div>
+            </div>
+          </div>
+          <div class="field-error" data-error="payment">Please select a payment method</div>
+
+          <div data-upi-box style="display:none;margin-top:16px;padding:16px;background:var(--surface-2);border-radius:var(--radius-md);border:1px solid var(--line);">
+            <div class="lbl" style="font-family:var(--font-mono);font-size:11px;text-transform:uppercase;color:var(--text-muted);">UPI ID</div>
+            <div style="font-family:var(--font-mono);font-size:15px;color:var(--gold);margin:6px 0 12px;">vamit3421-3@okaxis</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button type="button" data-copy-upi class="btn btn-outline btn-sm">Copy UPI ID</button>
+            </div>
+            <p class="form-note">Amount to pay: <b data-upi-amount style="color:var(--yellow);">₹0</b>. Tapping "Place Order" below will open your UPI app with this amount pre-filled.</p>
+            <p class="form-note">After paying, your order status will show <b>Pending Verification</b> until we confirm receipt — we never mark an order paid just because the UPI app opened.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order summary -->
+      <div class="step-card" style="position:sticky;top:100px;">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Food Subtotal</span><span data-summary-subtotal>₹0</span></div>
+        <div class="summary-row"><span>Delivery Charge</span><span data-summary-delivery><span class="badge badge-pending">To be confirmed</span></span></div>
+        <div class="summary-row total"><span>Grand Total</span><b data-summary-grand>₹0</b></div>
+        <button type="button" data-checkout-submit class="btn btn-primary btn-block" style="margin-top:16px;">Place Order</button>
+        <p class="form-note">By placing this order you agree to pay the grand total shown above via your selected payment method.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Golden Pizza Cafe. All rights reserved.</span>
+      <span>Owned by Nissu · Behal, Bhiwani</span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" data-overlay></div>
+<aside class="cart-drawer" data-cart-drawer>
+  <div class="cart-head">
+    <strong style="font-family:var(--font-display);text-transform:uppercase;">Your Cart</strong>
+    <button class="nav-icon-btn" data-cart-close aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" data-cart-items></div>
+  <div class="cart-summary">
+    <div class="summary-row total"><span>Estimated Total</span><b data-cart-subtotal>₹0</b></div>
+    <a href="checkout.html" class="btn btn-primary btn-block" data-cart-checkout style="margin-top:14px;">Proceed to Checkout</a>
+  </div>
+</aside>
+
+<nav class="mobile-tabbar">
+  <a href="index.html">🏠<span>Home</span></a>
+  <a href="menu.html">📋<span>Menu</span></a>
+  <a href="#" data-cart-open>🛒<span>Cart</span></a>
+  <a href="orders.html">🧾<span>Orders</span></a>
+  <a href="login.html">👤<span>Account</span></a>
+</nav>
+
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="js/supabase.js"></script>
+<script src="js/menu-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/location.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+  // Simple read-only items review list for the checkout page (separate
+  // from the slide-out cart drawer, which is data-cart-items already).
+  document.addEventListener("DOMContentLoaded", () => {
+    const el = document.getElementById("checkout-items-list");
+    if (!el) return;
+    const cart = getCart();
+    if (!cart.length) return;
+    el.innerHTML = cart.map(l => `
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px dashed var(--line);">
+        <div style="display:flex;gap:10px;align-items:center;">
+          <img src="${l.image}" alt="${escapeHtml(l.name)}" style="width:44px;height:44px;border-radius:8px;object-fit:cover;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:14px;">${escapeHtml(l.name)}</div>
+            <div style="font-size:12px;color:var(--text-muted);">${l.size ? l.size + " · " : ""}Qty ${l.qty}</div>
+          </div>
+        </div>
+        <div style="font-family:var(--font-mono);color:var(--gold);">${formatRupee(l.price * l.qty)}</div>
+      </div>
+    `).join("");
+  });
+</script>
+</body>
+</html>
